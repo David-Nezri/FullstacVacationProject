@@ -1,0 +1,6 @@
+.Layout .container {
+	width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 64px 20px;
+}

@@ -1,0 +1,119 @@
+.AddVacation form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin: auto;
+    width: min-content;
+    min-width: 350px;
+    padding: 40px 40px 40px 40px;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    border: 1px solid black;
+}
+form h2 {
+    /* color: var(--Prime-500); */
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.AddVacation .input-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.AddVacation .input-label-wrapper label {
+    margin-left: 6px;
+    width: 100%;
+}
+.AddVacation .input-label-wrapper input {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+form .hint {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
+    color: red;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+}
+.AddVacation form button {
+    margin-top: 8px;
+    background-color: black;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: white;
+    font-weight: 400;
+    transition: all;
+}
+
+.AddVacation form button.secondary {
+    color: black;
+    border: 1px solid gray;
+    background-color: transparent;
+    margin-top: 0px;
+}
+.AddVacation form input#price {
+    background-image: url("http://localhost:3001/static/icons/AttachMoney.svg");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: left 12px center;
+    padding-left: 32px;
+}
+
+.AddVacation form .image-change {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    transform: translateX(-6px);
+    border-radius: 4px;
+}
+ .AddVacation form .image-change.no-image {
+    border: 1px solid black;
+} 
+
+ .AddVacation form .image-change span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color:black;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-weight: 400;
+    width: max-content;
+} 
+
+span:last-of-type {
+    text-align: center;
+}
+
+.AddVacation .action-nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    padding: 16px 0px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid black;
+}
+.AddVacation .action-nav button {
+    display: flex;
+    border: 1px solid transparent;
+    color:black;
+    justify-content: center;
+    align-items: center;
+}

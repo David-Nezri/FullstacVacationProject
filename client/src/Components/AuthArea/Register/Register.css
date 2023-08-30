@@ -1,0 +1,58 @@
+.Register form {
+   display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin: auto;
+    width: min-content;
+    min-width: 350px;
+    padding: 40px 40px 40px 40px;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    border: 1px solid black;
+}
+form h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.Register .input-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.Register .input-label-wrapper label {
+    margin-left: 6px;
+}
+.Register .input-label-wrapper input {
+   border: 1px solid black;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px 16px;
+    width: 100%;
+}
+form .hint {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
+    color: red;
+}
+
+.Register form button {
+ margin-top: 8px;
+    background-color: black;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: white;
+    font-weight: 400;
+    transition: all;
+}
+
+span:last-of-type {
+    text-align: center;
+}

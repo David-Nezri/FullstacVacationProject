@@ -1,0 +1,27 @@
+.FollowBtn {
+    position:absolute;
+    top: 13px;
+    left: -24px;
+    transform: scale(0.5);
+}
+
+.FollowBtn .content {
+    display: flex;
+    flex-direction: row;
+    padding: 1px ;
+    column-gap: 2px;
+    border: 2px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 90%;
+}
+
+.FollowBtn .text {
+    font-size: 30px;
+    margin-left: 39px;
+    color: rgb(0, 0, 0);
+}
+
+
+
+

@@ -1,0 +1,112 @@
+.EditVacation form {
+   display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin: auto;
+    width: min-content;
+    min-width: 350px;
+    padding: 40px 40px 40px 40px;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    border: 1px solid black;
+}
+form h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.EditVacation .input-label-wrapper {
+   display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.EditVacation .input-label-wrapper label {
+    margin-left: 6px;
+    width: 100%;
+}
+.EditVacation .input-label-wrapper input {
+     border: 1px solid black;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px 16px;
+    width: 100%;
+}
+form .hint {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
+    color: red;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.EditVacation form button {
+    margin-top: 8px;
+    background-color: black;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: white;
+    font-weight: 400;
+    transition: all;
+}
+
+.EditVacation form button.secondary {
+    color: black;
+    border: 1px solid gray;
+    background-color: transparent;
+    margin-top: 0px;
+}
+
+span:last-of-type {
+    text-align: center;
+}
+
+.EditVacation form .image-change {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    transform: translateX(-6px);
+    border-radius: 4px;
+}
+
+.EditVacation form .image-change span {
+ position: absolute;
+    top: 50%;
+    left: 50%;
+    color:black;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-weight: 400;
+    width: max-content;
+}
+
+.EditVacation form input#price {
+     border: 1px solid black;
+}
+
+.EditVacation .action-nav {
+     display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    padding: 16px 0px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid black;
+}
+.EditVacation .action-nav button {
+    display: flex;
+    border: 1px solid transparent;
+    color:black;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,38 @@
+.Header {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 40px;
+    align-items: center;
+    column-gap: 16px;
+    color: white;
+}
+.Header h3 {
+    font-size: 24px;
+    font-weight: 100;
+}
+.Header .user-data {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+    margin-left: auto;
+}
+
+.Header .login-out-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.Header .span-name {
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-right: 24px;
+}
+
+.Header button {
+    border: 0px solid transparent;
+}
+
+

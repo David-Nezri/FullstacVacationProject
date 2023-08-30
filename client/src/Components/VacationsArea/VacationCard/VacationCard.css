@@ -1,0 +1,70 @@
+.VacationCard {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 508px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    position: relative;
+}
+.VacationCard .bg-image {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 16px 24px;
+}
+.VacationCard .bg-image h3 {
+    font-size: 15px;
+    margin-top: auto;
+    color: white;
+    letter-spacing:1px;
+}
+
+.VacationCard .admin-wrapper {
+    display: flex;
+    position: absolute;
+    left: 16px;
+    column-gap: 8px;
+}
+
+.VacationCard h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin-top: auto;
+    background-color: gray;
+    text-align: center;
+    padding: 8px 16px;
+}
+
+.VacationCard h4 span {
+    font-size: 20px;
+    font-weight: 400;
+    color: red;
+    margin-bottom: 4px;
+}
+
+.VacationCard .vacation-description {
+    overflow: scroll;
+}
+
+.VacationCard p {
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.VacationCard .dates-wrapper {
+    position: relative;
+    background-color: lightgray;
+    padding: 16px 24px;
+    display: flex;
+    column-gap: 8px;
+}
+

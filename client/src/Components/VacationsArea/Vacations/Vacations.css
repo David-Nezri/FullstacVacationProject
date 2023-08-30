@@ -1,0 +1,43 @@
+.Vacations .vacations-align {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+.Vacations .vacations-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.Vacations .pagination-wrapper {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.Vacations .action-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    padding: 16px 0px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid black;
+}
+.Vacations .action-nav button {
+    display: flex;
+    border: 1px solid transparent;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    min-width: fit-content;
+}
+
+.Vacations .admin-btn {
+    display: flex;
+    column-gap: 8px;
+    margin-left: auto;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+.PageNotFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PageNotFound img {
+    mix-blend-mode:darken;
+}
+
+.PageNotFound button {
+    background-color: black;
+    border: 0px solid transparent;
+    color: white;
+}
+
