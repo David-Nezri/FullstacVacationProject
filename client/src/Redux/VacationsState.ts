@@ -1,5 +1,7 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import VacationForUserModel from "../Models/vacationForUserModel";
+import logger from "redux-logger";
+import { countActions } from "./Middleware";
 
 
 export class VacationsState {
@@ -50,5 +52,5 @@ export function vacationsReducer(currentState = new VacationsState(), action: Va
     return newState; // return new state
 }
 
-export const vacationsStore = createStore(vacationsReducer);
+export const vacationsStore = createStore(vacationsReducer , applyMiddleware(countActions, logger));
 

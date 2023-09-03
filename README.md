@@ -1,2 +1,2 @@
-# FullstacVacationProject
+# FullstackVacationProject
 Vacation tagging system
