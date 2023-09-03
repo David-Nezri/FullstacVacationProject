@@ -15,6 +15,8 @@ import config from "../../../Utils/Config";
 import VacationCard from "../VacationCard/VacationCard";
 import "./Vacations.css";
 import usePageTitle from "../../../Utils/usePageTitle";
+import VacationModel from "../../../Models/vacationModel";
+import Spinner from "../../SharedArea/Spinner/Spinner";
 
 function Vacations(): JSX.Element {
 
@@ -22,8 +24,9 @@ function Vacations(): JSX.Element {
 
     const navigate = useNavigate()
     const pageSize = config.numOfVacationsOnPage
-    const [vacations, setVacations] = useState<VacationForUserModel[]>([])
+    const [fetchVacations, setFetchVacations] = useState<VacationForUserModel[]>([])
     const [vacationsToDisplay, setVacationsToDisplay] = useState<VacationForUserModel[]>([])
+    //const [vacations, setVacations] = useState<VacationModel[]>([]);
     const [pagination, setPagination] = useState({
         count: 0,
         from: 0,
@@ -45,7 +48,7 @@ function Vacations(): JSX.Element {
                 .then(result => {
 
                     // Set results in local state
-                    setVacations(result)
+                    setFetchVacations(result)
 
                 }).catch(err => {
                     notifyService.error(err)
@@ -54,17 +57,17 @@ function Vacations(): JSX.Element {
                     }
                 })
         } else {
-            setVacations(vacations.filter(v => v.isFollowing === 1))
+            setFetchVacations(fetchVacations.filter(v => v.isFollowing === 1))
         }
     }, [isFiltered])
 
     useEffect(() => {
 
         // how many vacations there are in the state
-        const vacationsLength = vacations.length
+        const vacationsLength = fetchVacations.length
 
         //  which vacation to display
-        const vacationsOnPage = vacations.slice(pagination.from, pagination.to)
+        const vacationsOnPage = fetchVacations.slice(pagination.from, pagination.to)
 
         // Set vacation count in state
         setPagination({ ...pagination, count: vacationsLength })
@@ -74,9 +77,9 @@ function Vacations(): JSX.Element {
 
         // If vacation store changed then repeat 
         const unsubscribe = vacationsStore.subscribe(() => {
-            setVacations(vacationsStore.getState().vacations)
-            const vacationsLength = vacations.length
-            const vacationsOnPage = vacations.slice(pagination.from, pagination.to)
+            setFetchVacations(vacationsStore.getState().vacations)
+            const vacationsLength = fetchVacations.length
+            const vacationsOnPage = fetchVacations.slice(pagination.from, pagination.to)
             setPagination({ ...pagination, count: vacationsLength })
             setVacationsToDisplay(vacationsOnPage)
         })
@@ -85,7 +88,7 @@ function Vacations(): JSX.Element {
         return () => unsubscribe()
 
         // Repeat each time local states are change
-    }, [vacations, pagination.from, pagination.to])
+    }, [fetchVacations, pagination.from, pagination.to])
 
     // Handle page change on pagination
     function handlePageChange(event: React.ChangeEvent<unknown>, page: number): void {
@@ -97,9 +100,11 @@ function Vacations(): JSX.Element {
     return (
         <div className="Vacations">
             <div className="action-nav">
+
+
                 {
                     authStore.getState().user.roleId !== 1 &&
-                <button
+                    <button
                 className={isFiltered ? "active" : ""}
                 onClick={() => isFiltered ? setIsFiltered(false) : setIsFiltered(true)}
                 >
@@ -122,7 +127,12 @@ function Vacations(): JSX.Element {
                 }
             </div>
             <div className="vacations-align">
+
+
+
                 <div className="vacations-wrapper">
+                {/* loading gif  */}
+                {fetchVacations.length === 0 && <Spinner />}
                     {
                         vacationsToDisplay.map(v =>
                             <VacationCard key={v.vacationId} vacationData={v} />
@@ -131,7 +141,7 @@ function Vacations(): JSX.Element {
                 </div>
             </div>
             <div className="pagination-wrapper">
-                <Pagination count={Math.ceil(vacations.length / pageSize)}
+                <Pagination count={Math.ceil(fetchVacations.length / pageSize)}
                     onChange={handlePageChange} variant="outlined" shape="rounded" />
             </div>
         </div>

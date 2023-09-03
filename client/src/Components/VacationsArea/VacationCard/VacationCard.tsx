@@ -1,16 +1,18 @@
-import config from "../../../Utils/Config";
-import FollowBtn from "../FollowBtn/FollowBtn";
-import "./VacationCard.css";
-import VacationForUserModel from "../../../Models/vacationForUserModel";
+import { Close } from "@mui/icons-material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import {  Dialog, DialogActions, DialogTitle } from "@mui/material";
+import EventIcon from '@mui/icons-material/Event';
+import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import VacationForUserModel from "../../../Models/vacationForUserModel";
+import VacationModel from "../../../Models/vacationModel";
 import { authStore } from "../../../Redux/AuthState";
 import vacationsService from "../../../Services/VacationsService";
-import { useNavigate } from "react-router-dom";
-import EventIcon from '@mui/icons-material/Event';
-import { useState } from "react";
-import { Close } from "@mui/icons-material";
+import config from "../../../Utils/Config";
+import Spinner from "../../SharedArea/Spinner/Spinner";
+import FollowBtn from "../FollowBtn/FollowBtn";
+import "./VacationCard.css";
 
 
 interface VacationCardProps {
@@ -25,8 +27,10 @@ function formatDate(date: string): string {
 
 function VacationCard(props: VacationCardProps): JSX.Element {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     
+    // const [vacations, setVacations] = useState<VacationModel[]>([]);
+
     const bgImage = {
         backgroundImage: `url(${config.serverStaticsImages + props.vacationData.imageName})`
     }
@@ -56,6 +60,9 @@ function VacationCard(props: VacationCardProps): JSX.Element {
                     authStore.getState().user.roleId !== 1 &&
                     <FollowBtn vacation={props.vacationData} />
                 }
+
+                {/* {vacations.length === 0 && <Spinner />} */}
+
                 {
                     authStore.getState().user.roleId === 1 &&
                     <div className="admin-wrapper">
