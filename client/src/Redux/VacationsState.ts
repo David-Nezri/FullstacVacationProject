@@ -1,7 +1,8 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore , compose } from "redux";
 import VacationForUserModel from "../Models/vacationForUserModel";
 import logger from "redux-logger";
 import { countActions } from "./Middleware";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 
 export class VacationsState {
@@ -51,6 +52,13 @@ export function vacationsReducer(currentState = new VacationsState(), action: Va
 
     return newState; // return new state
 }
+// Width middleware, without devtools
+//export const vacationsStore = createStore(vacationsReducer , applyMiddleware(countActions, logger));
 
-export const vacationsStore = createStore(vacationsReducer , applyMiddleware(countActions, logger));
+
+ // Width middleware, with devtools
+ export const vacationsStore = createStore(
+     vacationsReducer,
+     compose(applyMiddleware(countActions, logger), composeWithDevTools())
+ );
 
