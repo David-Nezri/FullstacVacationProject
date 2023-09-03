@@ -1,6 +1,7 @@
-import { Calculate, Clear, Close, ThumbUp } from "@mui/icons-material";
+import { Calculate, Close, ThumbUp } from "@mui/icons-material";
 import AddIcon from '@mui/icons-material/Add';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import { Dialog, DialogActions, DialogTitle } from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import jwtDecode from "jwt-decode";
 import { useEffect, useState } from "react";
@@ -12,13 +13,12 @@ import { vacationsStore } from "../../../Redux/VacationsState";
 import notifyService from "../../../Services/NotifyService";
 import vacationsService from "../../../Services/VacationsService";
 import config from "../../../Utils/Config";
-import VacationCard from "../VacationCard/VacationCard";
 import usePageTitle from "../../../Utils/usePageTitle";
 import Spinner from "../../SharedArea/Spinner/Spinner";
-import TotalVacations from "../TotalVacations/TotalVacations";
-import "./Vacations.css";
 import Vat from "../../UserUtilsArea/Vat/Vat";
-import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import TotalVacations from "../TotalVacations/TotalVacations";
+import VacationCard from "../VacationCard/VacationCard";
+import "./Vacations.css";
 
 
 function Vacations(): JSX.Element {
@@ -109,41 +109,43 @@ function Vacations(): JSX.Element {
             <div className="action-nav">
 
 
-                {
+            {
                     authStore.getState().user.roleId !== 1 &&
                     <button
+                    
                     className={isFiltered ? "active" : ""}
                     onClick={() => isFiltered ? setIsFiltered(false) : setIsFiltered(true)}
                     >
                     
                       <ThumbUp sx={{ color: "blue", fontSize: 30, marginRight: "8px" }}
                     />
+                    
                     My Vacations
                 </button>
-                
+            }
 
-                }
-
-                {
-                    authStore.getState().user.roleId !== 1 &&
-                <div className="admin-wrapper"> 
-                <button onClick={handleClickOpen} ><Calculate sx={{ color: "blue", fontSize: 30, marginRight: "8px", cursor: "pointer" }}/>Vat Calc</button>
+         {
+            authStore.getState().user.roleId !== 1 &&
                  
+            <div className="admin-wrapper"> 
+                
+                <button onClick={handleClickOpen} ><Calculate sx={{ color: "blue", fontSize: 30, marginRight: "8px", cursor: "pointer" }}/>Vat Calc</button>
                 <Dialog 
                     open={open}
                     onClose={handleClose}
                 >
+                    <DialogActions>
+                        <span><Close onClick={handleClose} sx={{ color: "inherent", fontSize: 30, marginRight: "18px" , cursor: "pointer" }}/> </span>
+                    </DialogActions>
+
                     <DialogTitle >
                     <span ><Vat percent={17}/></span>
                     </DialogTitle>
                   
-                    <DialogActions>
-                        <span><Close onClick={handleClose} sx={{ color: "inherent", fontSize: 30, marginRight: "18px" , cursor: "pointer" }}/> </span>
-                    </DialogActions>
                 </Dialog>
             </div>
                
-                }
+        }
 
 
                 {authStore.getState().user.roleId === 1 &&

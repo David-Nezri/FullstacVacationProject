@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { vacationsStore } from "../../../Redux/VacationsState";
 import "./TotalVacations.css";
