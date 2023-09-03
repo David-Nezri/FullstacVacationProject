@@ -6,6 +6,7 @@ import vacationsService from "../../../Services/VacationsService";
 import notifyService from "../../../Services/NotifyService";
 import { useNavigate } from "react-router-dom";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import usePageTitle from "../../../Utils/usePageTitle";
 
 ChartJS.register(
     CategoryScale,
@@ -38,6 +39,8 @@ export const options = {
 export
 
     function Report(): JSX.Element {
+
+        usePageTitle("Report");   
 
     const navigate = useNavigate()
     const [labels, setLabels] = useState<string[]>([])

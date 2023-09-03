@@ -7,8 +7,11 @@ import vacationsService from "../../../Services/VacationsService";
 import validateDate from "../ValidateDate/ValidateDate";
 import "./AddVacation.css";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import usePageTitle from "../../../Utils/usePageTitle";
 
 function AddVacation(): JSX.Element {
+    
+    usePageTitle("Add Vacation");
 
     const { register, handleSubmit, formState, setValue, getValues } = useForm<VacationModel>()
     const navigate = useNavigate()

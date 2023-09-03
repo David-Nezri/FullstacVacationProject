@@ -14,8 +14,11 @@ import vacationsService from "../../../Services/VacationsService";
 import config from "../../../Utils/Config";
 import VacationCard from "../VacationCard/VacationCard";
 import "./Vacations.css";
+import usePageTitle from "../../../Utils/usePageTitle";
 
 function Vacations(): JSX.Element {
+
+    usePageTitle("Vacations");
 
     const navigate = useNavigate()
     const pageSize = config.numOfVacationsOnPage

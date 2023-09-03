@@ -4,8 +4,11 @@ import UserModel from "../../../Models/userModel";
 import authService from "../../../Services/AuthService";
 import notifyService from "../../../Services/NotifyService";
 import "./Register.css";
+import usePageTitle from "../../../Utils/usePageTitle";
 
 function Register(): JSX.Element {
+
+    usePageTitle("Register");
 
     const { register, handleSubmit, formState} = useForm<UserModel>()
     const navigate = useNavigate()

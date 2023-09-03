@@ -8,8 +8,11 @@ import config from "../../../Utils/Config";
 import validateDate from "../ValidateDate/ValidateDate";
 import "./EditVacation.css";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import usePageTitle from "../../../Utils/usePageTitle";
 
 function EditVacation(): JSX.Element {
+
+    usePageTitle("Edit Vacation");
 
     const { register, handleSubmit, formState, setValue, getValues } = useForm<VacationModel>()
     const navigate = useNavigate()

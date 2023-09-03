@@ -4,6 +4,7 @@ import CredentialsModel from "../../../Models/credentialsModel";
 import authService from "../../../Services/AuthService";
 import notifyService from "../../../Services/NotifyService";
 import "./Login.css";
+import usePageTitle from "../../../Utils/usePageTitle";
 
 interface LocationState {
     path: {
@@ -12,6 +13,8 @@ interface LocationState {
 }
 
 function Login(): JSX.Element {
+
+    usePageTitle("Login");
 
     const { register, handleSubmit, formState } = useForm<CredentialsModel>()
     const navigate = useNavigate()

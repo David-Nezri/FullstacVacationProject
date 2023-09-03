@@ -60,10 +60,10 @@ function VacationCard(props: VacationCardProps): JSX.Element {
                     authStore.getState().user.roleId === 1 &&
                     <div className="admin-wrapper">
                   
-                        <span><DeleteIcon onClick={handleClickOpen} sx={{ color: "inherent", fontSize: 30, marginRight: "18px", cursor: "pointer" }}/> </span>
+                        <span><DeleteIcon  onClick={handleClickOpen} sx={{ color: "inherent", fontSize: 30, marginRight: "18px", cursor: "pointer" }}/> </span>
                         <span><EditIcon  onClick={() => navigate('/edit/' + props.vacationData.vacationId)} sx={{ color: "inherent", fontSize: 30, marginRight: "18px", cursor: "pointer" }}/> </span>
                      
-                        <Dialog
+                        <Dialog 
                             open={open}
                             onClose={handleClose}
                         >
