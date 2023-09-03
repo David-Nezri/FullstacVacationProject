@@ -1,4 +1,4 @@
-/*https://youtu.be/X8eAbu1RWZ4 don't forget to watch => how protect routes !!  */
+/*https://youtu.be/X8eAbu1RWZ4 how protect routes  */
 
 import { Navigate, useLocation } from "react-router-dom";
 import { authStore } from "../../../../Redux/AuthState";
@@ -7,7 +7,7 @@ interface RequireAuthRouting {
     children: JSX.Element//javascript XML Element(HTML)
 }
 
-function RequireAuthAdmin(authElement: RequireAuthRouting): JSX.Element {
+function ProtectRoutes(authElement: RequireAuthRouting): JSX.Element {
 
     const location = useLocation()
    
@@ -16,4 +16,4 @@ function RequireAuthAdmin(authElement: RequireAuthRouting): JSX.Element {
     );
 }
 
-export default RequireAuthAdmin
+export default ProtectRoutes
