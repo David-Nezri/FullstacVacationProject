@@ -28,8 +28,9 @@ async function register(user: UserModel): Promise<string> {
 
     // Insert new user 
     const sql =
-        `INSERT IGNORE INTO users(userUuid, firstName, lastName, username, password)
-         VALUES (?, ?, ?, ?, ? );
+        `INSERT INTO users(userUuid, firstName, lastName, username, password)
+         SELECT * FROM (SELECT ? as userUuid, ? as firstName, ? as lastName, ? as username, ? as password) AS new_value
+         WHERE NOT EXISTS ( SELECT username FROM users WHERE username = ? ) LIMIT 1;
         `
     const result: OkPacket = await dal.execute(sql, [ user.userUuid, user.firstName, user.lastName, user.username, user.password, user.username, ]);
     //throw new error if user exist
