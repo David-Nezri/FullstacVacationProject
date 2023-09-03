@@ -7,6 +7,7 @@ interface VacationModel {
     startDate: string;
     endDate: string;
     price: number;
+   
 }
 
 export default VacationModel;

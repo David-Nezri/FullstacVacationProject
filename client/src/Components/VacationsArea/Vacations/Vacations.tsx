@@ -1,4 +1,4 @@
-import { ThumbUp } from "@mui/icons-material";
+import { Calculate, Clear, Close, ThumbUp } from "@mui/icons-material";
 import AddIcon from '@mui/icons-material/Add';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import Pagination from '@mui/material/Pagination';
@@ -17,6 +17,9 @@ import usePageTitle from "../../../Utils/usePageTitle";
 import Spinner from "../../SharedArea/Spinner/Spinner";
 import TotalVacations from "../TotalVacations/TotalVacations";
 import "./Vacations.css";
+import Vat from "../../UserUtilsArea/Vat/Vat";
+import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+
 
 function Vacations(): JSX.Element {
 
@@ -26,13 +29,17 @@ function Vacations(): JSX.Element {
     const pageSize = config.numOfVacationsOnPage
     const [fetchVacations, setFetchVacations] = useState<VacationForUserModel[]>([])
     const [vacationsToDisplay, setVacationsToDisplay] = useState<VacationForUserModel[]>([])
-    //const [vacations, setVacations] = useState<VacationModel[]>([]);
-    const [pagination, setPagination] = useState({
-        count: 0,
-        from: 0,
-        to: pageSize
-    })
+    const [pagination, setPagination] = useState({ count: 0,from: 0, to: pageSize})
     const [isFiltered, setIsFiltered] = useState<boolean>(false)
+    const [open, setOpen] = useState<boolean>(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     // Get all vacation for one user on load
     useEffect(() => {
@@ -105,14 +112,40 @@ function Vacations(): JSX.Element {
                 {
                     authStore.getState().user.roleId !== 1 &&
                     <button
-                className={isFiltered ? "active" : ""}
-                onClick={() => isFiltered ? setIsFiltered(false) : setIsFiltered(true)}
-                >
+                    className={isFiltered ? "active" : ""}
+                    onClick={() => isFiltered ? setIsFiltered(false) : setIsFiltered(true)}
+                    >
+                    
                       <ThumbUp sx={{ color: "blue", fontSize: 30, marginRight: "8px" }}
                     />
                     My Vacations
                 </button>
+                
+
                 }
+
+                {
+                    authStore.getState().user.roleId !== 1 &&
+                <div className="admin-wrapper"> 
+                <button onClick={handleClickOpen} ><Calculate sx={{ color: "blue", fontSize: 30, marginRight: "8px", cursor: "pointer" }}/>Vat Calc</button>
+                 
+                <Dialog 
+                    open={open}
+                    onClose={handleClose}
+                >
+                    <DialogTitle >
+                    <span ><Vat percent={17}/></span>
+                    </DialogTitle>
+                  
+                    <DialogActions>
+                        <span><Close onClick={handleClose} sx={{ color: "inherent", fontSize: 30, marginRight: "18px" , cursor: "pointer" }}/> </span>
+                    </DialogActions>
+                </Dialog>
+            </div>
+               
+                }
+
+
                 {authStore.getState().user.roleId === 1 &&
                     <div className="admin-btn">
                         <button onClick={() => navigate('/add')}>
@@ -125,6 +158,7 @@ function Vacations(): JSX.Element {
                         </button>
 
                         <span><TotalVacations/></span>
+                       
 
                     </div>
                 }

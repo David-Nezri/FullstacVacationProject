@@ -52,6 +52,7 @@ export function vacationsReducer(currentState = new VacationsState(), action: Va
 
     return newState; // return new state
 }
+
 // Width middleware, without devtools
 //export const vacationsStore = createStore(vacationsReducer , applyMiddleware(countActions, logger));
 
