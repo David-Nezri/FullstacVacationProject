@@ -13,10 +13,10 @@ import notifyService from "../../../Services/NotifyService";
 import vacationsService from "../../../Services/VacationsService";
 import config from "../../../Utils/Config";
 import VacationCard from "../VacationCard/VacationCard";
-import "./Vacations.css";
 import usePageTitle from "../../../Utils/usePageTitle";
-import VacationModel from "../../../Models/vacationModel";
 import Spinner from "../../SharedArea/Spinner/Spinner";
+import TotalVacations from "../TotalVacations/TotalVacations";
+import "./Vacations.css";
 
 function Vacations(): JSX.Element {
 
@@ -123,6 +123,9 @@ function Vacations(): JSX.Element {
                             <LeaderboardIcon sx={{ color: "inherent", fontSize: 16, marginRight: "8px" }} />
                              Report
                         </button>
+
+                        <span><TotalVacations/></span>
+
                     </div>
                 }
             </div>

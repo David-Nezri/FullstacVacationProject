@@ -6,13 +6,12 @@ import { Dialog, DialogActions, DialogTitle } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import VacationForUserModel from "../../../Models/vacationForUserModel";
-import VacationModel from "../../../Models/vacationModel";
 import { authStore } from "../../../Redux/AuthState";
 import vacationsService from "../../../Services/VacationsService";
 import config from "../../../Utils/Config";
-import Spinner from "../../SharedArea/Spinner/Spinner";
 import FollowBtn from "../FollowBtn/FollowBtn";
 import "./VacationCard.css";
+
 
 
 interface VacationCardProps {
@@ -29,8 +28,6 @@ function VacationCard(props: VacationCardProps): JSX.Element {
 
     const navigate = useNavigate();
     
-    // const [vacations, setVacations] = useState<VacationModel[]>([]);
-
     const bgImage = {
         backgroundImage: `url(${config.serverStaticsImages + props.vacationData.imageName})`
     }
@@ -59,9 +56,9 @@ function VacationCard(props: VacationCardProps): JSX.Element {
                 {
                     authStore.getState().user.roleId !== 1 &&
                     <FollowBtn vacation={props.vacationData} />
+                    
                 }
 
-                {/* {vacations.length === 0 && <Spinner />} */}
 
                 {
                     authStore.getState().user.roleId === 1 &&
@@ -69,7 +66,7 @@ function VacationCard(props: VacationCardProps): JSX.Element {
                   
                         <span><DeleteIcon  onClick={handleClickOpen} sx={{ color: "inherent", fontSize: 30, marginRight: "18px", cursor: "pointer" }}/> </span>
                         <span><EditIcon  onClick={() => navigate('/edit/' + props.vacationData.vacationId)} sx={{ color: "inherent", fontSize: 30, marginRight: "18px", cursor: "pointer" }}/> </span>
-                     
+                         
                         <Dialog 
                             open={open}
                             onClose={handleClose}
@@ -102,8 +99,10 @@ function VacationCard(props: VacationCardProps): JSX.Element {
                 </p>
                 <h4>${props.vacationData.price}</h4>
             </div>
+
         </div>
     );
+   
 }
 
 export default VacationCard;
