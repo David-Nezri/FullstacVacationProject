@@ -52,6 +52,12 @@ form .hint {
     color: white;
     font-weight: 400;
     transition: all;
+    transition-duration: 200ms;
+}
+
+.Login form button:hover {
+    cursor: pointer;
+    background-color: gray;
 }
 
 span:last-of-type {
