@@ -57,6 +57,12 @@ form textarea {
     color: white;
     font-weight: 400;
     transition: all;
+    transition-duration: 200ms;
+}
+
+.AddVacation form button:hover {
+    cursor: pointer;
+    background-color: gray;
 }
 
 .AddVacation form button.secondary {
@@ -75,12 +81,26 @@ form textarea {
 
 .AddVacation form .image-change {
     position: relative;
+    cursor: pointer;
     height: 150px;
     width: 100%;
     background-size: cover;
     transform: translateX(-6px);
     border-radius: 4px;
 }
+
+.AddVacation form .image-change.no-image {
+    border: 1px solid lightgray;
+    background-repeat: no-repeat;
+    background-image: url("http://localhost:3001/static/icons/placeholder-image.png");
+    background-position: center;
+    
+}
+
+.AddVacation form .image-change:hover span {
+    background-color: lightgray;
+}
+
  .AddVacation form .image-change.no-image {
     border: 1px solid black;
 } 
@@ -89,13 +109,21 @@ form textarea {
     position: absolute;
     top: 50%;
     left: 50%;
-    color:black;
+    color: white;
     transform: translate(-50%, -50%);
+    background-color: rgba(98, 98, 98, 0.6);
+    cursor: pointer;
     border-radius: 4px;
     padding: 6px 16px;
     font-weight: 400;
+    transition: all;
+    transition-duration: 200ms;
     width: max-content;
 } 
+
+.AddVacation form input#image {
+    opacity: 0%;
+}
 
 span:last-of-type {
     text-align: center;
@@ -115,4 +143,9 @@ span:last-of-type {
     color:black;
     justify-content: center;
     align-items: center;
+}
+
+.AddVacation .action-nav button:hover {
+    border: 1px solid gray;
+    color: lightgray;
 }

@@ -1,5 +1,5 @@
 .EditVacation form {
-   display: flex;
+    display: flex;
     flex-direction: column;
     row-gap: 16px;
     margin: auto;
@@ -57,6 +57,12 @@ form textarea {
     color: white;
     font-weight: 400;
     transition: all;
+    transition-duration: 200ms;
+}
+
+.EditVacation form button:hover {
+    cursor: pointer;
+    background-color: gray;
 }
 
 .EditVacation form button.secondary {
@@ -79,20 +85,38 @@ span:last-of-type {
     border-radius: 4px;
 }
 
+.EditVacation form .image-change:hover span {
+    background-color: lightgray;
+}
+
+
 .EditVacation form .image-change span {
- position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
-    color:black;
+    color: white;
     transform: translate(-50%, -50%);
+    background-color: rgba(98, 98, 98, 0.6);
+    cursor: pointer;
     border-radius: 4px;
     padding: 6px 16px;
     font-weight: 400;
+    transition: all;
+    transition-duration: 200ms;
     width: max-content;
 }
 
 .EditVacation form input#price {
-     border: 1px solid black;
+    background-image: url("http://localhost:3001/static/icons/AttachMoney.svg");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: left 12px center;
+    padding-left: 32px;
+}
+
+
+.EditVacation form input#image {
+    opacity: 0;
 }
 
 .EditVacation .action-nav {
@@ -109,4 +133,10 @@ span:last-of-type {
     color:black;
     justify-content: center;
     align-items: center;
+}
+
+
+.EditVacation .action-nav button:hover {
+    border: 1px solid gray;
+    color: gray;
 }
