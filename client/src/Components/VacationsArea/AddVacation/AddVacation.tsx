@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import VacationModel from "../../../Models/vacationModel";
 import notifyService from "../../../Services/NotifyService";
 import vacationsService from "../../../Services/VacationsService";
-import validateDate from "../ValidateDate/ValidateDate";
+import validateDate from "../../../Utils/formUtils/ValidateDate";
 import "./AddVacation.css";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import usePageTitle from "../../../Utils/usePageTitle";

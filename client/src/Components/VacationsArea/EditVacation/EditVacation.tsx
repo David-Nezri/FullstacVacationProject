@@ -5,7 +5,7 @@ import VacationModel from "../../../Models/vacationModel";
 import notifyService from "../../../Services/NotifyService";
 import vacationsService from "../../../Services/VacationsService";
 import config from "../../../Utils/Config";
-import validateDate from "../ValidateDate/ValidateDate";
+import validateDate from "../../../Utils/formUtils/ValidateDate";
 import "./EditVacation.css";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import usePageTitle from "../../../Utils/usePageTitle";
