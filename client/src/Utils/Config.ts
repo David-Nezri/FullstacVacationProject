@@ -15,7 +15,7 @@ const config = {
         addVacation: "http://localhost:3001/api/vacation/",
         getReportData: "http://localhost:3001/api/report",
     },
-    numOfVacationsOnPage: 10,
+    numOfVacationsOnPage: 9,
 };
 
 export default config;
