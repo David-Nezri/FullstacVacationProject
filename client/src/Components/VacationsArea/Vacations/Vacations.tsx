@@ -19,6 +19,7 @@ import Vat from "../../UserUtilsArea/Vat/Vat";
 import TotalVacations from "../TotalVacations/TotalVacations";
 import VacationCard from "../VacationCard/VacationCard";
 import "./Vacations.css";
+import TotalOutOfStock from "../TotalOutOfStock/TotalOutOfStock";
 
 
 function Vacations(): JSX.Element {
@@ -158,10 +159,8 @@ function Vacations(): JSX.Element {
                             <LeaderboardIcon sx={{ color: "inherent", fontSize: 16, marginRight: "8px" }} />
                              Report
                         </button>
-
                         <span><TotalVacations/></span>
-                       
-
+                        <span><TotalOutOfStock/></span>
                     </div>
                 }
             </div>

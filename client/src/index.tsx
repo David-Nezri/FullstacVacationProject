@@ -5,6 +5,8 @@ import Layout from './Components/LayoutArea/Layout/Layout';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import interceptorService from './Services/InterceptorService';
+import { vacationsStore } from './Redux/VacationsState';
+import { Provider } from 'react-redux';
 
 interceptorService.createInterceptor()
 
@@ -14,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Layout />
+            <Provider store={vacationsStore}>
+                <Layout />
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>
 );
