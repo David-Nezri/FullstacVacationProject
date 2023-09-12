@@ -1,0 +1,14 @@
+.TotalOutOfStock {
+	
+        display: inline-block;
+        /* margin: 10px; */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 3px;
+        box-shadow: 5px 5px 10px;
+        color: red;
+        align-items:center ;
+    
+    
+   
+}

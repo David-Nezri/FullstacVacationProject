@@ -16,10 +16,12 @@ import config from "../../../Utils/Config";
 import usePageTitle from "../../../Utils/usePageTitle";
 import Spinner from "../../SharedArea/Spinner/Spinner";
 import Vat from "../../UserUtilsArea/Vat/Vat";
-import TotalVacations from "../TotalVacations/TotalVacations";
+
 import VacationCard from "../VacationCard/VacationCard";
 import "./Vacations.css";
-import TotalOutOfStock from "../TotalOutOfStock/TotalOutOfStock";
+import TotalOutOfStock from "../../ReportsArea/TotalOutOfStock/TotalOutOfStock";
+import TotalVacations from "../../ReportsArea/TotalVacations/TotalVacations";
+
 
 
 function Vacations(): JSX.Element {

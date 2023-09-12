@@ -1,0 +1,20 @@
+.Report .action-nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    padding: 16px 0px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid black;
+}
+.Report .action-nav button {
+    display: flex;
+    border: 1px solid transparent;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.Report .action-nav button:hover {
+    border: 1px solid gray;
+    color: gray;
+}
