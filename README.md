@@ -1,2 +1,4 @@
 # FullstackVacationProject
-Vacation tagging system
+Vacation tagging system 
+frontend: react, redux, ts
+backend: DAL , express
