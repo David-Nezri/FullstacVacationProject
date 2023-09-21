@@ -1,3 +1,3 @@
 # FullstackVacationProject
- Vacation tagging system 
+ Vacation tagging system
 
